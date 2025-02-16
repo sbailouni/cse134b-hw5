@@ -1,0 +1,155 @@
+html, body {
+    min-height: 100dvh;
+    background-color: #F3F3F3;
+    margin: auto 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    margin: auto 1%;
+}
+
+p {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ----- Navigation bar ----- */
+
+.navigation-bar ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    gap: 50px;
+    flex-direction: row;
+    margin: 3% 1%;
+    list-style-type: none;
+}
+
+.navigation-bar ul li a {
+    text-transform: uppercase;
+    color: inherit;
+    font-size: 18px;
+}
+
+.navigation-bar ul li a:hover {
+    text-decoration: underline;
+    color: #CD5C08;
+}
+
+.navigation-bar ul li:nth-child(2) {
+    margin-left: auto;
+}
+
+.navigation-bar ul li:first-child{
+    font-weight: bold;
+}
+
+/* ----- Footer ----- */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 3% 1%;
+}
+
+footer a {
+    border: 1px solid black;
+    padding: 3px 4px 2px 4px; /* trbl */
+    border-radius: 5px;
+}
+
+footer a:nth-child(2) {
+    margin-right: auto;
+}
+
+/* ----- index.html ----- */
+
+.introduction {
+    margin: auto 1%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.intro-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 475px;
+}
+
+.intro-details h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro-details h1 {
+    font-size: 2rem;
+    margin: 0.3rem 0;
+    line-height: 1;
+}
+
+.intro-details p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #616161;
+    line-height: 1.5;
+}
+
+.about-button {
+    border: 1.5px solid black;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: black;
+    width: fit-content;
+}
+
+.about-button:hover {
+    background-color: #000;
+    color: #F3F3F3;
+}
+
+/* ----- about.html ----- */
+
+.hobbies-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.hobbies-gallery figcaption {
+    text-align: center;
+    overflow: auto;
+}
+
+.hobbies-gallery figure {
+    width: 200px;
+}
+
+.education-and-coursework {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* ----- projects.html ----- */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
