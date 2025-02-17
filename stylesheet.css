@@ -3,7 +3,24 @@
     --grid-gap: 1rem;
 }
 
+/* ----- Custom font ----- */
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/font/Inter-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
 html, body {
+    font-family: 'Inter', Arial, sans-serif;
     min-height: 100dvh;
     background-color: #F3F3F3;
     margin: auto 1%;
@@ -417,7 +434,7 @@ iframe {
 }
 
 /* Tablet Screens */
-@media (max-width: 1024px) {
+@media (max-width: 1190px) {
 
     main {
         margin: auto 3%;
@@ -613,8 +630,8 @@ iframe {
     }
 
     .education-and-coursework,
-    .skills, .languages ul {
-        font-size: 1rem;
+    .skills, .languages ul li {
+        font-size: 1.1rem;
     }
 
     .education-and-coursework,
