@@ -38,6 +38,29 @@ h2 {
 
 /* ----- Navigation bar ----- */
 
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home {
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-flex;
+    margin: 0.3em 1em;
+}
+
+nav input[type="checkbox"],
+nav label {
+    display: none;
+}
+
 .navigation-bar ul {
     display: flex;
     justify-content: space-between;
@@ -59,13 +82,6 @@ h2 {
     color: #CD5C08;
 }
 
-.navigation-bar ul li:nth-child(2) {
-    margin-left: auto;
-}
-
-.navigation-bar ul li:first-child{
-    font-weight: bold;
-}
 
 /* ----- Footer ----- */
 
@@ -225,6 +241,31 @@ footer a:nth-child(2) {
     color: #373737;
 }
 
+.project-images img {
+    max-width: 100%;
+    width: 120%;
+    height: auto;
+}
+
+.project-images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.project-images figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.project-images figcaption {
+    padding-top: 1rem;
+}
+
 /* ----- individual project pages ----- */
 
 .project-images {
@@ -308,7 +349,6 @@ iframe {
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
-
 }
 
 .contact-info, .contact-form {
@@ -377,9 +417,7 @@ iframe {
 }
 
 /* Tablet Screens */
-@media (min-width: 768px) {
-
-
+@media (max-width: 1024px) {
 
     main {
         margin: auto 3%;
@@ -438,6 +476,8 @@ iframe {
     html, body {
         overflow-x: hidden;
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     main {
@@ -466,17 +506,13 @@ iframe {
         font-size: 15px;
     }
 
-    .navigation-bar ul li:nth-child(2) {
-        margin-left: 0;
-    }
-
-    .navigation-bar ul li:first-child {
-        font-weight: bold;
+    .navigation-bar {
+        margin: 4% 3%;
     }
 
     footer {
         gap: 10px;
-        margin: 4% 2%;
+        margin: 4% 3%;
     }
 
     footer p {
@@ -585,5 +621,65 @@ iframe {
     .skills {
         display: flex;
         flex-direction: column;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 0;
+        
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+    .contact-container form {
+        margin: 0;
+
+    }
+
+    .contact-info {
+        padding-top: 0;
+        padding: 1rem;
+    }
+
+    input[type="checkbox"]:not(:checked) + ul {
+        display: none;
+    }
+
+    nav {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: auto 3%;
+        justify-content: center;
+    }
+
+    nav ul:last-child {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    nav label {
+        text-align: right;
+        display: block;
+        padding: 0.5em;
+        line-height: 3em;
+        align-self: flex-end;
+    }
+
+    .navigation-bar ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation-bar ul li {
+        display: block; 
+        margin: 0.5em 0;
+    }
+
+    .navigation-bar ul {
+        flex-direction: column;
+        gap: 15px; 
+        align-items: flex-end; 
     }
 }
