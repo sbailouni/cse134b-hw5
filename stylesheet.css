@@ -441,6 +441,7 @@ iframe {
             font-size: 0.9rem;
             font-weight: bold;
             width: fit-content;
+            padding: 5px;
         }
 
         #error-message {
