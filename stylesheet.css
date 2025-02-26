@@ -440,6 +440,7 @@ iframe {
             display: block;
             font-size: 0.9rem;
             font-weight: bold;
+            width: fit-content;
         }
 
         #error-message {
