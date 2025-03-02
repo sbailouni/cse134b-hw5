@@ -10,7 +10,7 @@
     <meta name="author" content="Sara Bailouni">
     <title>Sara Bailouni Portfolio</title>
     <link href="images/favicon.ico" rel="icon">
-    <link href="/stylesheet.css" rel="stylesheet">
+    <link href="/form-no-js-stylesheet.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,11 +39,11 @@
                 <p>Feel free to reach out with any inquiries</p>
                 <form action="https://httpbin.org/post" method="POST">
                     <label for="name">Name: <span class="required">*</span></label>
-                    <input type="text" name="name" id="name" placeholder="Enter your full name (first and last)" required>
-                    <label for="email">Email: <span class="required">*</span> </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your full name (first and last)" required minlength="2" maxlength="50" pattern="[A-Za-zÀ-ÿ]+(?:[-' ][A-Za-zÀ-ÿ]+)*">
+                    <label for="email">Email: <span class="required">*</span></label>
                     <input type="email" name="email" id="email" placeholder="Enter your email address" required>
                     <label for="comments">Comments: <span class="required">*</span> </label> 
-                    <textarea name="comments" id="comments" cols="60" rows="5" placeholder="Enter your comment" required></textarea>
+                    <textarea name="comments" id="comments" cols="60" rows="5" placeholder="Enter your comment" required minlength="10" maxlength="300"></textarea>
                     <input type="hidden" name="possible_bot" value="true">
                     <output id="error-message"></output>
                     <output id="info-message"></output>
