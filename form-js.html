@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--search engine meta tags-->
+    <meta name="description" content="Personal portfolio of Sara Bailouni, a Computer Science student at University of California San Diego">
+    <meta name="keywords" content="Sara Bailouni, portfolio, UCSD, computer science, projects, software engineer">
+    <meta name="author" content="Sara Bailouni">
+    <title>Sara Bailouni Portfolio</title>
+    <link href="images/favicon.ico" rel="icon">
+    <link href="/form-js-stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navigation-bar">
+            <ul class="home">
+                <li><a href="index.html">SB</a></li> <!-- intended as both a website logo and navigation back to home -->
+            </ul>
+            <label for='menu' tabindex="0">
+                &#9776;
+            </label>
+            <input id='menu' type='checkbox' />
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="contact-container">
+            <section class="contact-form">
+                <h2>Let's Talk</h2>
+                <p>Feel free to reach out with any inquiries</p>
+                <form action="https://httpbin.org/post" method="POST">
+                    <label for="name">Name: <span class="required">*</span></label>
+                    <input type="text" name="name" id="name" placeholder="Enter your full name (first and last)" required minlength="2" maxlength="50" pattern="[A-Za-zÀ-ÿ]+(?:[-' ][A-Za-zÀ-ÿ]+)*">
+                    <label for="email">Email: <span class="required">*</span></label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                    <label for="comments">Comments: <span class="required">*</span> </label> 
+                    <textarea name="comments" id="comments" cols="60" rows="5" placeholder="Enter your comment" required></textarea>
+                    <input type="hidden" name="possible_bot" value="true">
+                    <input type="hidden" name="form-errors" id="form-errors">
+                    <output id="error-message"></output>
+                    <output id="info-message"></output>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+
+            <section class="contact-info">
+                <h2>Write</h2>
+                <address>
+                    <a href="mailto:sarabailouni@gmail.com">sarabailouni@gmail.com</a>
+                </address>
+                <h2>Call</h2>
+                <address><a href="tel:+18583054063">(858) 305-4063</a></address>
+                <h2>Connect</h2>
+                <a class="social-link" href="https://www.linkedin.com/in/sara-b-28739222b/">
+                    LinkedIn
+                </a>
+                <a class="social-link" href="https://github.com/sbailouni">
+                    GitHub
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/sara-b-28739222b/">
+            <img src="images/linkedin.svg" alt="LinkedIn logo consisting of the text 'in'" width="20" height="20"> 
+        </a>
+        <a href="https://github.com/sbailouni">
+            <img src="images/github.svg" alt="GitHub logo with the Octocat mascot" width="20" height="20"> 
+        </a>
+        <p>&copy; 2025 All rights reserved.</p>
+    </footer>
+
+    <script src="form-js-script.js"></script>
+    <noscript>JavaScript is required for this site to function properly. Please enable it in your browser settings.</noscript>
+</body>
+
+</html>
