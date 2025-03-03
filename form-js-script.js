@@ -8,6 +8,22 @@ let form_errors = [];
 
 function init() {
 
+    const toggleButton = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+
+    const savedTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    themeIcon.textContent = savedTheme === "dark" ? "🌙" : "☀️";
+
+    toggleButton.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        themeIcon.textContent = newTheme === "dark" ? "🌙" : "☀️";
+    });
+
     document.getElementById("name").addEventListener("input", function (event) {
         let regex = /[A-Za-zÀ-ÿ]+(?:[-' ][A-Za-zÀ-ÿ]+)*/;
         if (!regex.test(event.target.value) && event.target.value.length > 0) {
@@ -77,7 +93,6 @@ function init() {
             event.preventDefault(); 
         }
     });
-
 }
 
 function changeInputBorder(inputElement) {
