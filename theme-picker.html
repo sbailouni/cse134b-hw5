@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <header>
         <nav class="navigation-bar">
             <ul class="home">
@@ -35,17 +36,41 @@
             </ul>
         </nav>
     </header>
-    
-    <main>
-        <article class="project-detail">
-            <a href="projects.html" class="back-link">&larr;</a>
-            <h1>Graph Representation <span class="year">2023</span></h1>
-            <p>
-                Designed a C++ class to represent graphs, with basic graph operations and functions that find shortest weighted and unweighted paths,
-                connected components of a graph less than or equal to a threshold, and the smallest connecting threshold between a given pair of nodes.
-            </p>
-            <p>Private Github repository provided upon request.</p>
-        </article>
+
+    <main class="theme-picker"> 
+        <h1>Custom Theme Picker</h1>
+
+        <!-- Theme Customization Form -->
+        <div class="theme-picker">
+            <label for="theme-name">Theme Name:</label>
+            <input type="text" id="theme-name" placeholder="Enter theme name">
+
+            <label for="text-color">Text Color:</label>
+            <input type="color" id="text-color">
+
+            <label for="bg-color">Background Color:</label>
+            <input type="color" id="bg-color">
+
+            <label for="font-style">Font Style:</label>
+            <select id="font-style">
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="Courier New, monospace">Courier New</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="Tahoma, sans-serif">Tahoma</option>
+            </select>
+
+            <button id="save-theme">Save Theme</button>
+        </div>
+
+        <!-- Theme Selector -->
+        <div class="theme-selection">
+            <label for="theme-selector">Choose Theme:</label>
+            <select id="theme-selector">
+                <option value="default">Default</option>
+            </select>
+            <button id="delete-theme">Delete Theme</button>
+        </div>
     </main>
 
     <footer>
@@ -61,7 +86,9 @@
         </a>
         <p>&copy; 2025 All rights reserved.</p>
     </footer>
+
     <script src="form-js-script.js"></script>
+
     <noscript>
         <style>
             #theme-toggle {
@@ -70,6 +97,6 @@
         </style>
         <p>JavaScript is required for this site to function properly, and to have access to the theme switcher. Please enable it in your browser settings.</p>
     </noscript>
-</body>
 
+</body>
 </html>

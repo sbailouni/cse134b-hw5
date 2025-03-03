@@ -24,6 +24,96 @@ function init() {
         themeIcon.textContent = newTheme === "dark" ? "🌙" : "☀️";
     });
 
+    const themeSelector = document.getElementById("theme-selector");
+    const themeNameInput = document.getElementById("theme-name");
+    const textColorPicker = document.getElementById("text-color");
+    const bgColorPicker = document.getElementById("bg-color");
+    const fontStyleSelector = document.getElementById("font-style");
+    const saveThemeBtn = document.getElementById("save-theme");
+    const deleteThemeBtn = document.getElementById("delete-theme");
+
+    function loadThemes() {
+        const savedThemes = JSON.parse(localStorage.getItem("themes")) || {};
+        themeSelector.innerHTML = '<option value="default">Default</option>'; // Reset options
+        for (let themeName in savedThemes) {
+            let option = document.createElement("option");
+            option.value = themeName;
+            option.textContent = themeName;
+            themeSelector.appendChild(option);
+        }
+    }
+
+    function applyTheme(themeName) {
+        const savedThemes = JSON.parse(localStorage.getItem("themes")) || {};
+        const theme = savedThemes[themeName];
+
+        if (theme) {
+            document.documentElement.style.setProperty("--text-color", theme.textColor);
+            document.documentElement.style.setProperty("--site-color", theme.bgColor);
+            document.documentElement.style.setProperty("--font-family", theme.fontStyle);
+        } else {
+            resetToDefault();
+        }
+
+        localStorage.setItem("selectedTheme", themeName);
+    }
+
+    function resetToDefault() {
+        document.documentElement.style.removeProperty("--text-color");
+        document.documentElement.style.removeProperty("--site-color");
+        document.documentElement.style.removeProperty("--font-family");
+    }
+
+    saveThemeBtn?.addEventListener("click", () => {
+        const themeName = themeNameInput.value.trim();
+        if (!themeName) {
+            alert("Please enter a theme name.");
+            return;
+        }
+
+        const newTheme = {
+            textColor: textColorPicker.value,
+            bgColor: bgColorPicker.value,
+            fontStyle: fontStyleSelector.value
+        };
+
+        let savedThemes = JSON.parse(localStorage.getItem("themes")) || {};
+        savedThemes[themeName] = newTheme;
+        localStorage.setItem("themes", JSON.stringify(savedThemes));
+
+        loadThemes();
+        themeSelector.value = themeName;
+        applyTheme(themeName);
+    });
+
+    themeSelector?.addEventListener("change", () => {
+        const selectedTheme = themeSelector.value;
+        applyTheme(selectedTheme);
+    });
+
+    deleteThemeBtn?.addEventListener("click", () => {
+        const selectedTheme = themeSelector.value;
+        if (selectedTheme === "default") {
+            alert("Cannot delete the default theme.");
+            return;
+        }
+
+        let savedThemes = JSON.parse(localStorage.getItem("themes")) || {};
+        delete savedThemes[selectedTheme];
+        localStorage.setItem("themes", JSON.stringify(savedThemes));
+
+        loadThemes();
+        applyTheme("default");
+    });
+
+    const savedSelectedTheme = localStorage.getItem("selectedTheme") || "default";
+    applyTheme(savedSelectedTheme);
+    loadThemes();
+
+    if (themeSelector) {
+        themeSelector.value = savedSelectedTheme;
+    }
+
     document.getElementById("name").addEventListener("input", function (event) {
         let regex = /[A-Za-zÀ-ÿ]+(?:[-' ][A-Za-zÀ-ÿ]+)*/;
         if (!regex.test(event.target.value) && event.target.value.length > 0) {
