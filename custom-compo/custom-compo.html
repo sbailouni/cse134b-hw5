@@ -9,7 +9,7 @@
     <link href="../stylesheet.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="custom-compo-body">
     <header>
         <nav class="navigation-bar">
             <ul class="home">
@@ -38,6 +38,11 @@
             <p>Photos taken by Sara</p>
         </hgroup>
 
+        <div class="data-controls">
+            <button id="load-local" class="data-button">Load Local</button>
+            <button id="load-remote" class="data-button">Load Remote</button>
+        </div>
+
         <div id="gallery">
         </div>
     </main>
@@ -63,38 +68,71 @@
     <script>
         window.addEventListener('DOMContentLoaded', async () => {
             console.log("DOM Content loaded");
-            const container = document.getElementById("project-container");
-    
+            document.getElementById('load-local').addEventListener('click', loadLocalData);
+            document.getElementById('load-remote').addEventListener('click', loadRemoteData);
+            clearGallery();
+        });
+
+        function clearGallery() {
+            const gallery = document.getElementById("gallery");
+            gallery.innerHTML = '';
+        }
+
+        async function loadLocalData() {
+            clearGallery();
             // Load from localStorage
             const storedPhotos = JSON.parse(localStorage.getItem("photos")) || [];
+            
+            if (storedPhotos.length === 0) {
+                document.getElementById("gallery").innerHTML = '<p>No photos found in local storage. Try loading remote data first, then try again.</p>';
+                return;
+            }
+            
+            renderPhotos(storedPhotos);
+        }
 
-            // Load from remote
-            let remotePhotos = [];
+        async function loadRemoteData() {
+            clearGallery();
+            
             try {
-                const response = await fetch("photos.json");
-                remotePhotos = await response.json();
+                const response = await fetch("https://api.jsonbin.io/v3/b/67d3bb4f8960c979a5714100");
+
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                
+                const jsonData = await response.json();
+                const remotePhotos = jsonData.record;
+                
+                localStorage.setItem("photos", JSON.stringify(remotePhotos));
+                
+                renderPhotos(remotePhotos);
             } catch (error) {
                 console.error(error.message);
+                document.getElementById("gallery").innerHTML = `<p>Error loading remote data: ${error.message}</p>`;
             }
+        }
 
-            // Merge both sources
-            const photos = [...storedPhotos, ...remotePhotos];
-
+        function renderPhotos(photos) {
+            const gallery = document.getElementById("gallery");
+            
             photos.forEach(photo => {
-                const projectCard = document.createElement("photo-card");
-                projectCard.setAttribute('title', photo.title);
-                projectCard.setAttribute('date', photo.date);
-                projectCard.setAttribute('location', photo.location);
-                projectCard.setAttribute('image-url', photo.image_url);
-                projectCard.setAttribute('description', photo.description);
+                console.log(photo);
+                const photoCard = document.createElement("photo-card");
+                photoCard.setAttribute('title', photo.title);
+                photoCard.setAttribute('date', photo.date);
+                photoCard.setAttribute('location', photo.location);
+                photoCard.setAttribute('image-url', photo.image_url || photo.imageUrl);
+                photoCard.setAttribute('description', photo.description);
 
-                document.getElementById("gallery").appendChild(projectCard);
+                gallery.appendChild(photoCard);
             });
-        });
+        }
 
         document.getElementById('gallery').addEventListener('do-something', (event) => {
             let target = event.target;
-            target.style.border = target.style.border == "" ? "5px solid black" : "";
+            target.style.border = target.style.border == "" ? "1px solid lightgray" : "";
+            target.style.borderRadius = target.style.border === "" ? "" : "10px";
         });
     </script>
 

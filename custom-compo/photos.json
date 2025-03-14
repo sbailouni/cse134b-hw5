@@ -3,45 +3,54 @@
         "date": "September 2, 2024",
         "title": "Coastal View of Newport Island Park",
         "location": "Newport Beach, California",
-        "image_url": "images/newport-island-park.jpg",
+        "image_url": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/newport-island-park.jpg",
         "alt": "A scenic view of Newport Island Park in Newport Beach, California.",
         "description": "The waters and surrounding boats at Newport Island Park in Newport Beach.",
-        "imageUrl": "images/newport-island-park.jpg"
+        "imageUrl": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/newport-island-park.jpg"
     },
     {
         "date": "February 18, 2023",
         "title": "Ocean Horizon of Del Mar Beach",
         "location": "Del Mar, California",
-        "image_url": "images/delmar.jpg",
+        "image_url": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/delmar.jpg",
         "alt": "Del Mar Beach in Del Mar, California",
         "description": "A view of the ocean from the cliffs of Del Mar Beach in Del Mar, California.",
-        "imageUrl": "images/delmar.jpg"
+        "imageUrl": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/delmar.jpg"
     },
     {
         "date": "May 6, 2023",
         "title": "Bridge Trail in Lake Miramar",
         "location": "Scripps Ranch, San Diego",
-        "image_url": "images/lake-miramar.jpg",
+        "image_url": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/lake-miramar.jpg",
         "alt": "Lake Miramar in Scripps Ranch, San Diego",
         "description": "Wooden pathway surrounded by green trees, leading towards Lake Miramar.",
-        "imageUrl": "images/lake-miramar.jpg"
+        "imageUrl": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/lake-miramar.jpg"
     },
     {
         "date": "May 6, 2023",
         "title": "Mallards at Lake Miramar",
         "location": "Scripps Ranch, San Diego",
-        "image_url": "images/lake-miramar2.jpg",
+        "image_url": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/lake-miramar2.JPG",
         "alt": "Lake Miramar in Scripps Ranch, San Diego",
         "description": "Two mallard ducks laying in the grass with Lake Miramar in the background.",
-        "imageUrl": "images/lake-miramar.jpg"
+        "imageUrl": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/lake-miramar2.JPG"
     },
     {
         "date": "February 25, 2023",
         "title": "Laufey Concert at UCSD",
         "location": "La Jolla, San Diego",
-        "image_url": "images/laufey.JPG",
+        "image_url": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/laufey.JPG",
         "alt": "Laufey performing live on stage under purple lighting at UCSD campus",
         "description": "A concert shot of Laufey performing live at UCSD.",
-        "imageUrl": "images/laufey.JPG"
+        "imageUrl": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/laufey.JPG"
+    },
+    {
+        "date": "August 18, 2024",
+        "title": "Street of Little Italy",
+        "location": "Downtown, San Diego",
+        "image_url": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/littleitaly.jpg",
+        "alt": "Entrance to Little Italy in Downtown, San Diego with modern buildings and a street scene in background",
+        "description": "A shot featuring the entrance sign of Little Italy in Downtown, San Diego.",
+        "imageUrl": "https://pub-5af76aca46f344ed833c6a0ee785845d.r2.dev/littleitaly.jpg"
     }
 ]
