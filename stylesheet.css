@@ -440,7 +440,7 @@ iframe {
     .contact-info {
         display: flex;
         flex-direction: column;
-        padding-left: 3rem;
+        padding-left: 1rem;
 
         a:not(.social-link) { 
             color: var(--address-color);
@@ -603,7 +603,7 @@ iframe {
     margin-bottom: 30px;
 }
 
-.data-button {
+.data-button, .gallery-link {
     display: inline-block;
     border: 1.5px solid var(--text-color, black);
     text-transform: uppercase;
@@ -617,7 +617,7 @@ iframe {
     cursor: pointer;
 }
 
-.data-button:hover {
+.data-button:hover, .gallery-link:hover {
     background-color: var(--text-color, black);
     color: var(--site-color, white);
 }
@@ -878,6 +878,7 @@ iframe {
     .contact-info {
         padding-top: 0;
         padding: 1rem;
+        padding-left: 1rem;
     }
 
     input[type="checkbox"]:not(:checked) + ul {
@@ -927,5 +928,9 @@ iframe {
 
     #gallery {
         grid-template-columns: 1fr;
+    }
+
+    .data-button, .gallery-link {
+        font-size: 0.8rem;
     }
 }
