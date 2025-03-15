@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Photos</title>
     <link href="stylesheet.css" rel="stylesheet">
+    <noscript>
+        <style>
+            #theme-toggle {
+                display: none;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
     <header>
@@ -15,7 +22,7 @@
             <label for='menu' tabindex="0">
                 &#9776;
             </label>
-            <input id='menu' type='checkbox' />
+            <input id='menu' type='checkbox'>
             <ul>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -68,11 +75,6 @@
     <script type="module" src="./my-component-crud.js"></script>
     <script type="module" src="./crud.js"></script>
     <noscript>
-        <style>
-            #theme-toggle {
-                display: none;
-            }
-        </style>
         <p>JavaScript is required for this site to function properly, and to have access to the theme switcher. Please enable it in your browser settings.</p>
     </noscript>
 </body>
