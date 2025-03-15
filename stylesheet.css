@@ -8,7 +8,7 @@
     --projects-grid-color-hover: rgba(177, 177, 177, 0.65);
     --address-color: color-mix(in hsl, hsl(200 50 80), rgb(0, 18, 100) 80%);
     --projects-grid-p: #373737;
-    --nav-a-hover: color: color(from rgb(184, 120, 0) srgb r g b / 0.8);
+    --nav-a-hover: color(from rgb(184, 120, 0) srgb r g b / 0.8);
     --font-family: 'Inter', Arial, sans-serif;
     --red-button-color: rgb(151, 35, 35);
     --blue-button-color: rgb(38, 57, 127);
@@ -119,10 +119,11 @@ nav label {
         text-transform: uppercase;
         color: inherit;
         font-size: 18px;
+        line-height: 1.4;
 
         &:hover{
-            text-decoration: underline;
             color: var(--nav-a-hover);
+            transition: color 0.25s ease-in-out;
         }
     }
 }
@@ -742,6 +743,16 @@ iframe {
     margin: 0;
 }
 
+a[aria-current="page"] {
+    font-weight: bold;
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 0px;
+
+    &:hover {
+        border-bottom: 2px solid var(--nav-a-hover);
+    }
+}
+
 /* Tablet Screens */
 @media (max-width: 1190px) {
 
@@ -1023,6 +1034,7 @@ iframe {
             padding: 0.5em;
             line-height: 3em;
             align-self: flex-end;
+            color: var(--text-color)
         }
     }
 
