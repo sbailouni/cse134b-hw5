@@ -9,12 +9,17 @@ export function getMyComponentCSS() {
                     --shadow-color: 0 4px 10px rgba(0, 0, 0, 0.47);
                 }
                 .simple-card {
+                    display:flex;
+                    position:relative;
+                    flex-direction: column;
                     border-radius: 12px;
                     box-shadow: var(--shadow-color);
                     overflow: hidden;
                     max-width: 320px;
-                    height: relative;
+                    height: 100%;
                     text-align: center;
+                    align-items: center;
+                    justify-content: center;
                     background-color: var(--grid-color);
                     padding: 15px;
                     transition: transform 0.3s ease-in-out;
@@ -22,7 +27,8 @@ export function getMyComponentCSS() {
 
                 .simple-card img {
                     width: 100%;
-                    height: 455px;
+                    height: auto;
+                    max-height: 475px;
                     display: block;
                     border-radius: 8px;
                 }
@@ -100,7 +106,8 @@ export function getMyComponentCSS() {
                     }
                     .simple-card img {
                         width: 100%;
-                        height: 80%;
+                        height:auto;
+                        max-height: 375px;
                     }
                 }
                 `;
