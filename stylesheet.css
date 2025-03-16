@@ -1076,12 +1076,23 @@ a[aria-current="page"] {
     }
 
     .data-button, .gallery-link {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .crud-main {
         .data-button {
-            padding: 8px 10px;
+            font-size: 0.9rem;
+        }
+        .data-controls {
+            display: grid;
+            align-items: column;
+            gap: 10px;
+        }
+    }
+
+    .custom-compo {
+        .data-button {
+            font-size: 0.9rem;
         }
         .data-controls {
             display: grid;
